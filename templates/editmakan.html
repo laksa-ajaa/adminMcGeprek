@@ -1,0 +1,78 @@
+{% include "header.html" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Edit Menu Makanan</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/makan">List Makanan</a></li>
+            <li class="breadcrumb-item active">Edit Menu Makanan</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column mb-3">
+                <a href="/makan" class="btn btn-primary mb-3" style="width: 150px"><i class="fas fa-arrow-left"></i> Kembali</a>
+                <div class="table-responsive">
+                  <form action="/editmakan/{{data[0]._id}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{data[0]._id}}" />
+                    <div class="mb-3">
+                      <label for="nama" class="form-label">Nama Makanan</label>
+                      <input type="text" class="form-control" name="nama" id="nama" placeholder="Enter the Fruits Name" value="{{data[0].nama}}" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="harga" class="form-label">Harga</label>
+                      <input type="number" class="form-control" name="harga" id="harga" placeholder="Enter the Price" value="{{data[0].harga}}" required />
+                    </div>
+                    <div class="mb-3 custom-file">
+                      <div class="d-flex flex-column mb-2">
+                        <label for="image" class="form-label">Gambar</label>
+                        <img id="gambar-preview" src="../static/assets/img/makanan/{{data[0].gambar}}" alt="" width="100" />
+                      </div>
+                      <input type="file" class="form-control-file" accept=".png,.jpg,.jpeg" name="gambar" value="{{data[0].gambar}}" placeholder="Enter the Image" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="deskripsi" class="form-label mt-3">Deskripsi</label>
+                      <textarea class="form-control" name="deskripsi" placeholder="Enter the Description of Product" required>{{data[0].deskripsi}}</textarea>
+                    </div>
+                    <div class="mb-3">
+                      <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+</div>
+<!-- /.content-wrapper -->
+
+{% include "footer.html" %}

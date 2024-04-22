@@ -1,0 +1,74 @@
+{% include "header.html" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Tambah Menu Minuman</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/minum">List Minuman</a></li>
+            <li class="breadcrumb-item active">Tambah Menu Minuman</li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column mb-3">
+                <a href="/minum" class="btn btn-primary mb-3" style="width: 150px"><i class="fas fa-arrow-left"></i> Kembali</a>
+                <div class="table-responsive">
+                  <form action="/tbhminum" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                      <label for="nama" class="form-label">Nama Minuman</label>
+                      <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama minuman" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="harga" class="form-label">Harga</label>
+                      <input type="number" class="form-control" name="harga" id="harga" placeholder="Masukkan harga" required />
+                    </div>
+                    <div class="mb-3 custom-file">
+                      <label for="image" class="form-label">Gambar</label>
+                      <input type="file" class="form-control" accept=".png,.jpg,.jpeg" name="gambar" placeholder="Masukkan gambar" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="deskripsi" class="form-label mt-3">Deskripsi</label>
+                      <textarea class="form-control" name="deskripsi" placeholder="Masukkan deskripsi minuman" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <button type="submit" class="btn btn-primary">Tambah menu</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+</div>
+<!-- /.content-wrapper -->
+
+{% include "footer.html" %}
